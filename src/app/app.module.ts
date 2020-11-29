@@ -7,10 +7,17 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 // Importar Rutas
 import { ROUTES } from './app.routes';
+import { PaisesComponent } from './components/paises/paises.component';
 
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +25,17 @@ import { ROUTES } from './app.routes';
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
+    PaisesComponent,
+    NoimagePipe,
+    DomseguroPipe,
+    TarjetasComponent,
+    LoadingComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES, { useHash: true })],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
